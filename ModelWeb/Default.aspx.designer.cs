@@ -13,6 +13,15 @@ namespace ModelWeb {
     public partial class _Default {
         
         /// <summary>
+        /// lblModelName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblModelName;
+        
+        /// <summary>
         /// txtModelName control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace ModelWeb {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtModelName;
+        
+        /// <summary>
+        /// lblModelMail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblModelMail;
         
         /// <summary>
         /// txtModelMail control.
