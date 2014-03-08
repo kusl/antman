@@ -10,6 +10,6 @@
         <asp:Label ID="lblModelMail" runat="server" Text="Email address: "></asp:Label>
         <asp:TextBox ID="txtModelMail" runat="server" AutoCompleteType="Email" MaxLength="255" TextMode="Email" CssClass="form-control"></asp:TextBox>
         <br />
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="submit_Click" CssClass="btn btn-default btn-lg form-control" />
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="submit_Click" CssClass="btn btn-default form-control" />
     </div>
 </asp:Content>
