@@ -1,8 +1,269 @@
-﻿<Window x:Class="Model.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+﻿<Window
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d" x:Name="mainWindow" x:Class="TalentInfoSheet.MainWindow"
+Title="Information Sheet" Background="{x:Null}" Foreground="{x:Null}" Width="935" SizeToContent="WidthAndHeight"
+WindowStartupLocation="CenterScreen" Height="1065.6">
+  <Window.Resources>
+    <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+  </Window.Resources>
+  <ScrollViewer x:Name="scrollViewerGrid">
+    <Grid x:Name="mainGrid" Background="Black" Margin="0" Height="983" ToolTip="Boy/Girl" RenderTransformOrigin="0.467,0.468">
+      <TextBox x:Name="firstNameTextBox" HorizontalAlignment="Left" Height="27" Margin="142,198,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="Your First Name i.e. Sally"/>
+      <TextBox x:Name="lastNameTextBox" HorizontalAlignment="Left" Height="27" Margin="142,246,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="Your Last Name i.e., Jones"/>
+      <Label x:Name="firstNameLabel" Content="First Name:" HorizontalAlignment="Left" Height="27" Margin="33,198,0,0" VerticalAlignment="Top"
+      Width="91" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" Focusable="True" ToolTip="Your First Name i.e. Sally"/>
+      <Label x:Name="lastNameLabel" Content="Last Name:" HorizontalAlignment="Left" Height="27" Margin="33,246,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" ToolTip="Your Last Name i.e., Jones" Focusable="True"/>
+      <TextBox x:Name="stageNameTextBox" HorizontalAlignment="Left" Height="27" Margin="142,291,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="If applicable i.e., Foxy Cummings"/>
+      <Label x:Name="stageNameLabel" Content="Stage Name:" HorizontalAlignment="Left" Height="27" Margin="33,291,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" Focusable="True" ToolTip="If applicable i.e., Foxy Cummings"/>
+      <TextBox x:Name="ageTextBox" HorizontalAlignment="Left" Height="27" Margin="142,336,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="In years"/>
+      <Label x:Name="dateOfBirthLabel" Content="Age:" HorizontalAlignment="Left" Height="27" Margin="33,336,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" ToolTip="In years" Focusable="True"/>
+      <TextBox x:Name="heightTextBox" HorizontalAlignment="Left" Height="27" Margin="142,382,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="In Feet and Inches: i.e., 5'6&quot;"/>
+      <TextBox x:Name="weightTextBox" HorizontalAlignment="Left" Height="27" Margin="142,427,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="In lbs. i.e., 110"/>
+      <TextBox x:Name="chestTextBox" HorizontalAlignment="Left" Height="27" Margin="142,472,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="In inches and cup size i.e., 34DD"/>
+      <TextBox x:Name="waistTextBox" HorizontalAlignment="Left" Height="27" Margin="142,518,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="In inches i.e., 27"/>
+      <TextBox x:Name="hipsTextBox" HorizontalAlignment="Left" Height="27" Margin="142,563,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="In inches i.e., 32"/>
+      <TextBox x:Name="dressTextBox" HorizontalAlignment="Left" Height="27" Margin="142,608,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="In inches i.e., 32"
+      IsEnabled="{Binding IsChecked, ElementName=femaleRadio}"/>
+      <TextBox x:Name="shirtTextBox" HorizontalAlignment="Left" Height="27" Margin="142,652,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="Shirt Size i.e. S, M, L, XL"/>
+      <TextBox x:Name="pantsTextBox" HorizontalAlignment="Left" Height="27" Margin="142,698,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="Pants size (Men just Length i.e., 32)"/>
+      <TextBox x:Name="shoeTextBox" HorizontalAlignment="Left" Height="27" Margin="142,743,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" ToolTip="Shoe Size."/>
+      <Label x:Name="heightLabel" Content="Height:" HorizontalAlignment="Left" Height="27" Margin="33,382,0,0" VerticalAlignment="Top"
+      Width="109" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" ToolTip="In Feet and Inches: i.e., 5'6&quot;" Focusable="True"/>
+      <Label x:Name="weightLabel" Content="Weight:" HorizontalAlignment="Left" Height="27" Margin="33,427,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" ToolTip="In lbs. i.e., 110" Focusable="True"/>
+      <Label x:Name="chestLabel" Content="Chest:" HorizontalAlignment="Left" Height="27" Margin="33,472,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" Focusable="True" ToolTip="In inches and cup size i.e., 34DD"/>
+      <Label x:Name="waistLabel" Content="Waist:" HorizontalAlignment="Left" Height="27" Margin="33,518,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" ToolTip="In inches i.e., 27" Focusable="True"/>
+      <Label x:Name="hipsLabel" Content="Hips:" HorizontalAlignment="Left" Height="27" Margin="33,563,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" ToolTip="In inches i.e., 32" Focusable="True"/>
+      <Label x:Name="dressLabel" Content="Dress:" HorizontalAlignment="Left" Height="27" Margin="33,608,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" ToolTip="In inches i.e., 32" Focusable="True"/>
+      <Label x:Name="shirtLabel" Content="Shirt:" HorizontalAlignment="Left" Height="27" Margin="33,652,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" ToolTip="Shirt Size i.e. S, M, L, XL" Focusable="True"/>
+      <Label x:Name="pantsLabel" Content="Pants:" HorizontalAlignment="Left" Height="27" Margin="33,698,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" ToolTip="Pants size (Men just Length i.e., 32)" Focusable="True"/>
+      <Label x:Name="shoeLabel" Content="Shoe:" HorizontalAlignment="Left" Height="27" Margin="33,743,0,0" VerticalAlignment="Top"
+      Width="96" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" ToolTip="Shoe Size." Focusable="True"/>
+      <TextBox x:Name="phoneTextBox" HorizontalAlignment="Left" Height="27" Margin="486,198,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana"
+      ToolTip="Area code first. Numbers only i.e. 7605551234"/>
+      <Label x:Name="phoneLabel_Copy" Content="Phone Number:" HorizontalAlignment="Left" Height="27" Margin="374,198,0,0" VerticalAlignment="Top"
+      Width="107" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" Focusable="True"
+      ToolTip="Area code first. Numbers only i.e. 7605551234"/>
+      <TextBox x:Name="emailTextBox" HorizontalAlignment="Left" Height="27" Margin="486,246,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana"
+      ToolTip="Email Address i.e., sallyjones1@hotmail.com"/>
+      <Label x:Name="emailLabel" Content="Email:" HorizontalAlignment="Left" Height="27" Margin="374,246,0,0" VerticalAlignment="Top"
+      Width="107" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" Focusable="True"
+      ToolTip="Email Address i.e., sallyjones1@hotmail.com"/>
+      <Button x:Name="sendButton" Content="SEND" HorizontalAlignment="Center" Height="39" Margin="375,914,396,0" VerticalAlignment="Top"
+      Width="141" BorderBrush="#FFFF00B9" Foreground="#FFFF00B9" FontFamily="Snap ITC" FontSize="24" Click="sendButton_Click">
+        <Button.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFF3F3F3" Offset="0"/>
+            <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+            <GradientStop Color="#FFEF98F7" Offset="0.5"/>
+            <GradientStop Color="#FF861887" Offset="1"/>
+          </LinearGradientBrush>
+        </Button.Background>
+      </Button>
+      <TextBox x:Name="titleTextBox" HorizontalAlignment="Center" Height="67" Margin="252,34,56,0" Text="Talent Information Sheet"
+      VerticalAlignment="Top" Width="602" FontFamily="Snap ITC" FontSize="36" Background="{x:Null}"
+      BorderBrush="{x:Null}" SelectionBrush="{x:Null}" TextAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center"
+      HorizontalContentAlignment="Center" Focusable="False" IsHitTestVisible="False" TextWrapping="Wrap">
+        <TextBox.Foreground>
+          <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF861887"/>
+            <GradientStop Color="#FF861887" Offset="1"/>
+            <GradientStop Color="#FFEF98F7" Offset="0.5"/>
+          </LinearGradientBrush>
+        </TextBox.Foreground>
+      </TextBox>
+      <TextBox x:Name="cityTextBox" HorizontalAlignment="Left" Height="27" Margin="486,291,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana"
+      ToolTip="The City you live in i.e., Palmdale"/>
+      <ComboBox x:Name="stateComboBox" HorizontalAlignment="Left" Height="27" Margin="486,336,0,0" VerticalAlignment="Top" Width="141"
+      BorderBrush="#FFFF00B9" Background="Black" Foreground="#FFFF00B9" FontFamily="Verdana" IsReadOnly="True"
+      ToolTip="Pick the State you live in">
+        <ComboBoxItem x:Name="alComboItem" Content="AL"/>
+        <ComboBoxItem x:Name="azComboItem" Content="AZ"/>
+        <ComboBoxItem x:Name="akComboItem" Content="AK"/>
+        <ComboBoxItem x:Name="arComboItem" Content="AR"/>
+        <ComboBoxItem x:Name="caComboItem" Content="CA"/>
+        <ComboBoxItem x:Name="coComboItem" Content="CO"/>
+        <ComboBoxItem x:Name="ctComboItem" Content="CT"/>
+        <ComboBoxItem x:Name="deComboItem" Content="DE"/>
+        <ComboBoxItem x:Name="flComboItem" Content="FL"/>
+        <ComboBoxItem x:Name="gaComboItem" Content="GA"/>
+        <ComboBoxItem x:Name="hiComboItem" Content="HI"/>
+        <ComboBoxItem x:Name="idComboItem" Content="ID"/>
+        <ComboBoxItem x:Name="ilComboItem" Content="IL"/>
+        <ComboBoxItem x:Name="inComboItem" Content="IN"/>
+        <ComboBoxItem x:Name="iaComboItem" Content="IA"/>
+        <ComboBoxItem x:Name="ksComboItem" Content="KS"/>
+        <ComboBoxItem x:Name="kyComboItem" Content="KY"/>
+        <ComboBoxItem x:Name="laComboItem" Content="LA"/>
+        <ComboBoxItem x:Name="maComboItem" Content="MA"/>
+        <ComboBoxItem x:Name="meComboItem" Content="ME"/>
+        <ComboBoxItem x:Name="mdComboItem" Content="MD"/>
+        <ComboBoxItem x:Name="miComboItem" Content="MI"/>
+        <ComboBoxItem x:Name="mnComboItem" Content="MN"/>
+        <ComboBoxItem x:Name="msComboItem" Content="MS"/>
+        <ComboBoxItem x:Name="moComboItem" Content="MO"/>
+        <ComboBoxItem x:Name="mtComboItem" Content="MT"/>
+        <ComboBoxItem x:Name="neComboItem" Content="NE"/>
+        <ComboBoxItem x:Name="nvComboItem" Content="NV"/>
+        <ComboBoxItem x:Name="nhComboItem" Content="NH"/>
+        <ComboBoxItem x:Name="njComboItem" Content="NJ"/>
+        <ComboBoxItem x:Name="nmCOmboItem" Content="NM"/>
+        <ComboBoxItem x:Name="nyComboItem" Content="NY"/>
+        <ComboBoxItem x:Name="ncComboItem" Content="NC"/>
+        <ComboBoxItem x:Name="ndComboItem" Content="ND"/>
+        <ComboBoxItem x:Name="ohComboItem" Content="OH"/>
+        <ComboBoxItem x:Name="okComboItem" Content="OK"/>
+        <ComboBoxItem x:Name="orComboItem" Content="OR"/>
+        <ComboBoxItem x:Name="paComboItem" Content="PA"/>
+        <ComboBoxItem x:Name="riComboItem" Content="RI"/>
+        <ComboBoxItem x:Name="scComboItem" Content="SC"/>
+        <ComboBoxItem x:Name="sdComboItem" Content="SD"/>
+        <ComboBoxItem x:Name="tnComboItem" Content="TN"/>
+        <ComboBoxItem x:Name="txComboItem" Content="TX"/>
+        <ComboBoxItem x:Name="utComboItem" Content="UT"/>
+        <ComboBoxItem x:Name="vtComboItem" Content="VT"/>
+        <ComboBoxItem x:Name="vaComboItem" Content="VA"/>
+        <ComboBoxItem x:Name="wzComboItem" Content="WA"/>
+        <ComboBoxItem x:Name="wvComboItem" Content="WV"/>
+        <ComboBoxItem x:Name="wiComboItem" Content="WI"/>
+        <ComboBoxItem x:Name="wyComboItem" Content="WY"/>
+      </ComboBox>
+      <Label x:Name="cityLabel" Content="City:" HorizontalAlignment="Left" Height="27" Margin="374,291,0,0" VerticalAlignment="Top"
+      Width="107" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" Focusable="True" ToolTip="The City you live in i.e., Palmdale"/>
+      <Label x:Name="stateLabel" Content="State:" HorizontalAlignment="Left" Height="27" Margin="374,336,0,0" VerticalAlignment="Top"
+      Width="107" Foreground="White" FontFamily="Verdana" IsHitTestVisible="True" Focusable="True" ToolTip="Pick the State you live in"/>
+      <Image x:Name="wkvImage" HorizontalAlignment="Left" Height="183" Margin="29,-20,0,820" VerticalAlignment="Bottom" Width="219"
+      Source="kit.jpeg" Stretch="UniformToFill"/>
+      <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Center" Height="39" Margin="581,914,190,0" VerticalAlignment="Top"
+      Width="141" BorderBrush="#FFFF00B9" Foreground="Red" FontFamily="Snap ITC" FontSize="24" Click="cancelButtonClick">
+        <Button.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFF3F3F3" Offset="0"/>
+            <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+            <GradientStop Color="#FFEF98F7" Offset="0.5"/>
+            <GradientStop Color="#FF861887" Offset="1"/>
+          </LinearGradientBrush>
+        </Button.Background>
+      </Button>
+      <Button x:Name="clearButton" Content="Clear" HorizontalAlignment="Center" Height="39" Margin="143,914,628,0" VerticalAlignment="Top"
+      Width="141" BorderBrush="#FFFF00B9" Foreground="#FF0017FF" FontFamily="Snap ITC" FontSize="24" Click="clearButtonClick">
+        <Button.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFF3F3F3" Offset="0"/>
+            <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+            <GradientStop Color="#FFEF98F7" Offset="0.5"/>
+            <GradientStop Color="#FF861887" Offset="1"/>
+          </LinearGradientBrush>
+        </Button.Background>
+      </Button>
+      <TextBox x:Name="experienceTextBox" HorizontalAlignment="Left" Height="72" Margin="374,427,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+      Width="347" BorderBrush="#FFFF00B9" FontFamily="Verdana" SpellCheck.IsEnabled="True" Background="Black" Foreground="#FFFF00B9" RenderTransformOrigin="0.501,0.517" MaxLength="500" TextChanged="experienceTextBoxTextChanged" ToolTip="Enter your experience; 500 words or less"/>
+      <Label x:Name="expLabel" Content="List any adult entertainment experience including links&#xA;to any web content (if applicable) 500 words or less:"
+      HorizontalAlignment="Left" Height="40" Margin="374,382,0,0" VerticalAlignment="Top" Width="347" Foreground="White" FontFamily="Verdana"
+      IsHitTestVisible="False"/>
+      <RadioButton x:Name="femaleRadio" Content="Female" HorizontalAlignment="Left" Height="19" Margin="33,163,0,0" VerticalAlignment="Top"
+      Width="91" BorderBrush="#FFFF00B9" GroupName="maleFemaleRadioGroup" FontFamily="Verdana" Foreground="White"
+      Background="Black" ToolTip="Click if you are Female"/>
+      <RadioButton x:Name="maleRadio" Content="Male" HorizontalAlignment="Left" Height="19" Margin="129,163,0,0" VerticalAlignment="Top"
+      Width="91"
+      BorderBrush="#FFFF00B9" GroupName="maleFemaleRadioGroup" FontFamily="Verdana" Foreground="White" Background="Black"
+      ToolTip="Click if you are Male"/>
+      <RichTextBox x:Name="disclaimerRichTextBox" HorizontalAlignment="Left" Height="76" Margin="327,101,0,0" VerticalAlignment="Top"
+      Width="463"
+      Background="Black" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Focusable="False" IsHitTestVisible="False"
+      FontFamily="Verdana">
+        <FlowDocument>
+          <Paragraph NumberSubstitution.CultureSource="User" Foreground="#FFFF00B9" TextAlignment="Center">
+            <Run x:Name="disclaimerRun1" Text="You must be at least"/>
+            <Run x:Name="disclaimerRun2" Text="18 YEARS of AGE" FontWeight="Bold" TextDecorations="Underline"/>
+            <Run x:Name="disclaimerRun3" Text="to submit this information. If you are not, click cancel to leave.
+All information and images submitted will be used for"/>
+            <Run x:Name="disclaimerRun4" Text="CASTING PURPOSES ONLY" FontWeight="Bold" TextDecorations="Underline"/>
+            <Run x:Name="disclaimerRun5" Text="and will not be shared with other entities."/>
+          </Paragraph>
+        </FlowDocument>
+      </RichTextBox>
+      <Label x:Name="upldExplLabel" Content="Upload 2 jpeg images of you fully nude, &#xA;1 front and 1 rear. Men fully erect."
+      HorizontalAlignment="Left" Height="40" Margin="374,695,0,0" VerticalAlignment="Top" Width="347" Foreground="White" FontFamily="Verdana"
+      IsHitTestVisible="False"/>
+      <Button x:Name="chooseFileButton" Content="Choose File" HorizontalAlignment="Left" Height="27" Margin="374,743,0,0" VerticalAlignment="Top"
+      Width="107" FontFamily="Verdana" Click="chooseFileButtonClick"/>
+      <TextBox x:Name="chosenFileTextBox" HorizontalAlignment="Left" Height="27" Margin="481,743,0,0" TextWrapping="Wrap"
+      VerticalAlignment="Top" Width="187" FontFamily="Verdana" TextAlignment="Center" IsReadOnly="True" Focusable="False"
+      VerticalScrollBarVisibility="Auto"/>
+      <Button x:Name="uploadButton" Content="UPLOAD" HorizontalAlignment="Left" Height="27" Margin="673,743,0,0" VerticalAlignment="Top"
+      Width="107" FontFamily="Verdana" Click="uploadButtonClick" FontWeight="Bold" IsEnabled="{Binding ElementName=chosenFileTextBox, Path=Text.Length, Mode=OneWay}">
+        <Button.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFF3F3F3" Offset="0"/>
+            <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+            <GradientStop Color="#FFEF98F7" Offset="0.5"/>
+            <GradientStop Color="#FF861887" Offset="1"/>
+          </LinearGradientBrush>
+        </Button.Background>
+      </Button>
+      <Button x:Name="cancelUploadButton" Content="CANCEL" HorizontalAlignment="Left" Height="27" Margin="780,743,0,0" VerticalAlignment="Top"
+      Width="107" FontFamily="Verdana" Click="uploadCancelButtonClick" Foreground="Red" FontWeight="Bold" IsEnabled="{Binding ElementName=uploadedFilesListBox, Path=Items.Count, Mode=OneWay}">
+        <Button.Background>
+          <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+            <GradientStop Color="#FFF3F3F3" Offset="0"/>
+            <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
+            <GradientStop Color="#FFEF98F7" Offset="0.5"/>
+            <GradientStop Color="#FF861887" Offset="1"/>
+          </LinearGradientBrush>
+        </Button.Background>
+      </Button>
+      <ListBox x:Name="uploadedFilesListBox" HorizontalAlignment="Left" Height="87" Margin="374,775,0,0" VerticalAlignment="Top"
+      Width="294" BorderBrush="#FFFF00B9" FontFamily="Verdana" Background="Black"
+      IsHitTestVisible="True" Foreground="#FFFF00B9"
+      ScrollViewer.CanContentScroll="True" Focusable="False"/>
+      <CheckBox x:Name="soloCheckBox" Content="Solo" HorizontalAlignment="Left" Height="14" Margin="397,568,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Solo"/>
+      <Label x:Name="availabilityLabel" Content="Availability. Check all that you are willing to do:"
+      HorizontalAlignment="Left" Height="26" Margin="374,537,0,0" VerticalAlignment="Top" Width="347" Foreground="White" FontFamily="Verdana"
+      IsHitTestVisible="False"/>
+      <CheckBox x:Name="bgCheckBox" Content="B/G" HorizontalAlignment="Left" Height="14" Margin="397,587,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Boy/Girl" />
+      <CheckBox x:Name="ggCheckBox" Content="G/G" HorizontalAlignment="Left" Height="14" Margin="397,606,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Girl/Girl" />
+      <CheckBox x:Name="bbgCheckBox" Content="B/B/G" HorizontalAlignment="Left" Height="14" Margin="397,625,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Boy/Boy/Girl" />
+      <CheckBox x:Name="ggbCheckBox" Content="G/G/B&#xD;&#xA;" HorizontalAlignment="Left" Height="14" Margin="397,644,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Girl/Girl/Boy"/>
+      <CheckBox x:Name="groupCheckBox" Content="Group&#xA;" HorizontalAlignment="Left" Height="14" Margin="397,663,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Group"/>
+      <CheckBox x:Name="analCheckBox" Content="Anal&#xA;" HorizontalAlignment="Left" Height="14" Margin="478,570,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Anal"/>
+      <CheckBox x:Name="dpCheckBox" Content="DP&#xA;" HorizontalAlignment="Left" Height="14" Margin="478,589,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Double Penetration"/>
+      <CheckBox x:Name="swallowCheckBox" Content="Swallow&#xA;" HorizontalAlignment="Left" Height="14" Margin="478,608,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Swallow"/>
+      <CheckBox x:Name="squirtCheckBox" Content="Squirt&#xA;" HorizontalAlignment="Left" Height="14" Margin="478,627,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Squirt" />
+      <CheckBox x:Name="bjCheckBox" Content="BJ&#xA;" HorizontalAlignment="Left" Height="14" Margin="478,646,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Blow Job"/>
+      <CheckBox x:Name="creamPieCheckBox" Content="Cream Pie&#xA;" HorizontalAlignment="Left" Height="14" Margin="478,665,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Cream Pie"/>
+      <CheckBox x:Name="fetishCheckBox" Content="Fetish&#xA;" HorizontalAlignment="Left" Height="14" Margin="580,572,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Fetish" />
+      <CheckBox x:Name="bondageCheckBox" Content="Bondage&#xA;" HorizontalAlignment="Left" Height="14" Margin="580,591,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Bondage" />
+      <CheckBox x:Name="interRacialCheckBox" Content="Interracial&#xA;" HorizontalAlignment="Left" Height="14" Margin="580,610,0,0" VerticalAlignment="Top" Width="81" BorderBrush="#FFFF00B9" FontFamily="Verdana" Foreground="White" ToolTip="Fetish"/>
+      <Label x:Name="remainingCharsLabel" Content="Remaining: " HorizontalAlignment="Left" Height="28" Margin="559,504,0,0" VerticalAlignment="Top" Width="162" FontFamily="Verdana" Foreground="Red"/>
+
     </Grid>
+  </ScrollViewer>
 </Window>
